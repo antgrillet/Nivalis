@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html data-theme="coffee" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Nous contactez</title>
+	<link href="./src/style.css" rel="stylesheet">
+	<link href="./dist/output.css" rel="stylesheet">
+	<script src="src/main.js"></script>
+</head>
+<body class="bg-base-200 text-base-content">
+<header class="sticky site-header top-0 w-full z-[999] transform transition-transform duration-500 ease-in-out translate-y-0">
+	<div class="navbar bg-base-100">
+		<div class="navbar-start">
+			<div class="dropdown">
+				<div class="btn btn-ghost lg:hidden" role="button" tabindex="0">
+					<svg
+							class="h-5 w-5"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+						<path
+								d="M4 6h16M4 12h8m-8 6h16"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"/>
+					</svg>
+				</div>
+				<ul
+						class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+						tabindex="0">
+					<li><a href="marque.html">Nos marques</a></li>
+					<li><a href="arpin.html">Arpin</a>
+					</li>
+					<li><a href="propos.html">A propos</a></li>
+				</ul>
+			</div>
+			<a class="btn btn-ghost text-xl uppercase" href="index.html">Nivalis</a>
+		</div>
+		<div class="navbar-center hidden lg:flex">
+			<ul class="menu menu-horizontal px-1">
+				<li><a href="marque.html">Nos marques</a></li>
+				<li><a href="arpin.html">Arpin</a></li>
+				<li><a href="propos.html">A propos</a></li>
+			</ul>
+		</div>
+		<div class="navbar-end">
+			<a class="btn btn-accent min-h-8 sm:min-h-12 text-xs sm:text-sm" href="contact.html">Nous contactez</a>
+		</div>
+	</div>
+</header>
+<div class="min-h-screen flex flex-col items-center justify-center px-4">
+	<!-- Header -->
+	<header class="mb-8 text-center">
+		<h1 class="text-4xl font-bold mb-4">Nous contactez</h1>
+		<p class="text-lg">Nous aimerions avoir de vos nouvelles ! Envoyez-nous un message en utilisant le formulaire
+			ci-dessous.</p>
+	</header>
+
+	<!-- Contact Form -->
+	<form class="bg-base-100 p-8 rounded-lg shadow-md w-full max-w-lg" id="contactForm">
+		<div class="form-control mb-4">
+			<label class="label">
+				<span class="label-text">Votre nom</span>
+			</label>
+			<input class="input input-bordered" id="name" placeholder="Entre votre nom" required type="text"/>
+		</div>
+
+		<div class="form-control mb-4">
+			<label class="label">
+				<span class="label-text">Votre email</span>
+			</label>
+			<input class="input input-bordered" id="email" placeholder="Entrer votre email" required type="email"/>
+		</div>
+
+		<div class="form-control mb-4">
+			<label class="label">
+				<span class="label-text">Message</span>
+			</label>
+			<textarea class="textarea textarea-bordered" id="message" placeholder="Entrer votre message" required
+					  rows="5"></textarea>
+		</div>
+
+		<div class="form-control mt-6">
+			<button class="btn btn-accent w-full" type="submit">Send Message</button>
+		</div>
+	</form>
+
+	<!-- Confirmation Message -->
+	<div class="hidden mt-4 text-green-500 font-bold" id="confirmationMessage">
+		Thank you! Your message has been sent.
+	</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+	const contactForm = document.getElementById('contactForm');
+	const confirmationMessage = document.getElementById('confirmationMessage');
+
+	contactForm.addEventListener('submit', function (event) {
+		event.preventDefault(); // Prevent form submission
+
+		// Validate inputs (basic example)
+		const name = document.getElementById('name').value.trim();
+		const email = document.getElementById('email').value.trim();
+		const message = document.getElementById('message').value.trim();
+
+		if (name && email && message) {
+			// Simulate form submission
+			confirmationMessage.classList.remove('hidden');
+			contactForm.reset(); // Clear the form
+		} else {
+			alert('Please fill out all fields.');
+		}
+	});
+</script>
+</body>
+</html>
